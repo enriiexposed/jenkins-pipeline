@@ -39,13 +39,13 @@ pipeline {
                 sh 'ls -l ./deploy.sh'
                 sh 'head -5 ./deploy.sh | cat -v'
                 sh 'chmod +x ./deploy.sh'
-                sh './deploy.sh'
+                sh '/usr/bin/bash ./deploy.sh'
             }
         }
         stage('Cleanup') {
             steps{
                 sh 'chmod +x ./cleanup.sh'
-                sh './cleanup.sh'
+                sh '/usr/bin/bash ./cleanup.sh'
             }
         }
     }

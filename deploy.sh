@@ -1,4 +1,3 @@
-#!/usr/bin/bash
 echo "Removing api container if it exists..."
 docker container rm -f api || true
 echo "Removing network test-net if it exists..."
