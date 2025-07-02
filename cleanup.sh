@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/bash
 docker container rm -f api
 docker network rm test-net
