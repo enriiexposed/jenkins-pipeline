@@ -38,7 +38,6 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -l ./deploy.sh'
                 sh 'head -5 ./deploy.sh | cat -v'
-                sh 'file ./deploy.sh'
                 sh 'chmod +x ./deploy.sh'
                 sh './deploy.sh'
             }
