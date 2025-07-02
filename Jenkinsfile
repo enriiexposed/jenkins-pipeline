@@ -41,6 +41,7 @@ pipeline {
         }
         stage('Cleanup') {
             steps{
+                sh 'which sh || echo "sh no encontrado"'
                 sh 'chmod +x ./cleanup.sh'
                 sh '/usr/bin/sh ./cleanup.sh'
             }
