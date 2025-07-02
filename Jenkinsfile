@@ -33,6 +33,12 @@ pipeline {
                 sh "docker image rm $registry:$BUILD_NUMBER"
             }
         }
+        stage('Deploy and smoke test') {
+            steps {
+                sh 'chmod +x ./deploy.sh'
+                sh './deploy.sh'
+            }
+        }
         stage('Cleanup') {
             steps{
                 sh 'chmod +x ./cleanup.sh'
