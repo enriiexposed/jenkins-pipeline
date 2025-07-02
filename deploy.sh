@@ -11,7 +11,7 @@ docker container run -d \
  $registry:$BUILD_NUMBER
 
 # Logic to wait for the api component to be ready on port 3000
-read -r -d '' wait_for <<'EOF'
+read -r -d '' wait_for << 'EOF'
 echo "Waiting for API to listen on port 3000..."
 while ! nc -z api 3000; do
  sleep 0.1 # wait for 1/10 of the second before check again
