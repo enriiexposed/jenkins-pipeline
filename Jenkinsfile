@@ -17,16 +17,12 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                dir('ch07/jenkins-pipeline') {
-                    sh 'npm install'
-                }
+                sh 'npm install'
             }
         }
         stage("Test"){
             steps {
-                dir('ch07/jenkins-pipeline') {
-                    sh 'npm test'
-                }
+                sh 'npm test'
             }
         }
         stage("Build & Push Docker image") {
