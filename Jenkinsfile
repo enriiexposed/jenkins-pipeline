@@ -36,13 +36,13 @@ pipeline {
         stage('Deploy and smoke test') {
             steps {
                 sh 'chmod +x ./deploy.sh'
-                sh '/usr/bin/bash ./deploy.sh'
+                sh './deploy.sh'
             }
         }
         stage('Cleanup') {
             steps{
                 sh 'chmod +x ./cleanup.sh'
-                sh '/usr/bin/bash ./cleanup.sh'
+                sh './cleanup.sh'
             }
         }
     }
