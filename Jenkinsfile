@@ -35,13 +35,14 @@ pipeline {
         }
         stage('Deploy and smoke test') {
             steps {
+                sh 'which sh || echo "sh no encontrado"'
                 sh 'chmod +x ./deploy.sh'
                 sh '/usr/bin/sh ./deploy.sh'
             }
         }
         stage('Cleanup') {
             steps{
-                sh 'which sh || echo "sh no encontrado"'
+                
                 sh 'chmod +x ./cleanup.sh'
                 sh '/usr/bin/sh ./cleanup.sh'
             }
