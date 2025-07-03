@@ -7,6 +7,8 @@ echo "Deploying app ($registry:$BUILD_NUMBER)..."
 docker network create test-net
 docker container run -d --name api --net test-net $registry:$BUILD_NUMBER
 
+docker container logs
+
 # Logic to wait for the api component to be ready on port 3000
 read -d '' wait_for << EOF
 
